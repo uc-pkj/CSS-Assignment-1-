@@ -6,7 +6,6 @@
 .outerdiv {
   width: 100%;
   min-height: 100vh;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,10 +27,8 @@
   border-radius: 10px;
 }
 .innerdivpic {
-  transform: skew(20deg, 0deg);
   float: left;
   shape-outside: circle();
-  position: relative;
 }
 .innerdivpic > img {
   height: 150px;
@@ -43,12 +40,13 @@
 .innerdiv:hover img {
   filter: grayscale(0%) blur(3px)
 }
-.innerdivcont {
+.innerdivpic, .innerdivcont{
   transform: skew(20deg, 0deg);
+}
+.innerdivcont {
   shape-outside: circle(50%);
   width: 95%;
   margin: auto;
-  position: relative;
 }
 .innerdiv img {
   transition: transform 1s, filter 2s ease-in-out;
@@ -86,16 +84,9 @@ p {
 }
 @media screen and (max-width: 946px) {
   .innerdiv{
-    transform: none;
     width: 80%;
   }
-  .innerdivpic {
-  transform: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  }
-  .innerdivcont{
+  .innerdivcont, .innerdivpic, .innerdiv {
     transform: none;
   }
 }
@@ -103,9 +94,6 @@ p {
   .innerdivpic > img {
     height: 100px;
     width: 100px;
-  }
-  .innerdivcont>p{
-    font-size: 18px;
   }
   .innerdivcont>h3{
     font-size: 18px;
